@@ -27,4 +27,5 @@ feature "User creats a post", %q{
     expect(page).to have_content "rspec help"
     expect(page).to have_content "This is a really complicated problem"
   end
+
 end
