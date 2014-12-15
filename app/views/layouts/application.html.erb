@@ -8,6 +8,20 @@
 </head>
 <body>
 
+  <div id="name">
+    <ul id="nav">
+      <li>
+        <%= link_to "Add a Post",new_post_path %>
+      </li>
+    </ul>
+  </div>
+  <% if flash.any? %>
+  <div>
+    <%= notice %>
+  </div>
+  <% end %>
+
+
 <%= yield %>
 
 </body>
