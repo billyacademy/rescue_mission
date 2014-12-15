@@ -16,7 +16,6 @@ feature "User creats a post", %q{
   it "creates a post with valid attributes" do
 
     visit '/posts'
-    visit '/posts/new'
 
     expect(page).to have_content "this is where you post"
   end
