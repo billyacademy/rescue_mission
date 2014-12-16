@@ -18,7 +18,7 @@ feature "User creates a post", %q{
     visit '/posts/new'
 
     fill_in "Title", with: "This is a post with a title more than forty characters, I think............"
-    fill_in "Description", with: "This description has to be a minimum of 150 characters
+    fill_in "Description", with: "Description is too short (minimum is 150 characters)
     words words words words words words words words words words words words words words words
     words words words words words words words words words words words words words words words
     words words words words words words words words words words words words words words words words
@@ -29,7 +29,7 @@ feature "User creates a post", %q{
 
     expect(page).to have_content "You have successfully submitted a post"
     expect(page).to have_content "This is a post with a title more than forty characters, I think............"
-    expect(page).to have_content "This description has to be a minimum of 150 characters
+    expect(page).to have_content "Description is too short (minimum is 150 characters)
     words words words words words words words words words words words words words words words
     words words words words words words words words words words words words words words words
     words words words words words words words words words words words words words words words words
@@ -43,7 +43,7 @@ feature "User creates a post", %q{
 
     click_on "Submit"
 
-    expect(page).to have_content "you must provide a title with atleast 40 characters"
+    expect(page).to have_content "Title is too short (minimum is 40 characters)"
 
   end
 
@@ -55,7 +55,7 @@ feature "User creates a post", %q{
 
     click_on "Submit"
 
-    expect(page).to have_content "you must provide a description with atleast 150 characters"
+    expect(page).to have_content "Description is too short (minimum is 150 characters)"
 
   end
 
@@ -64,7 +64,7 @@ feature "User creates a post", %q{
 
     click_on "Submit"
 
-    expect(page).to have_content "you must provide a title and description"
+    expect(page).to have_content "Title can't be blank Title is too short (minimum is 40 characters)"
 
 
   end
@@ -74,7 +74,7 @@ feature "User creates a post", %q{
   visit '/posts/new'
 
   fill_in "Title", with: "rspec help"
-  fill_in "Description", with: "This description has to be a minimum of 150 characters
+  fill_in "Description", with: "Description is too short (minimum is 150 characters)
   words words words words words words words words words words words words words words words
   words words words words words words words words words words words words words words words
   words words words words words words words words words words words words words words words words
@@ -82,7 +82,7 @@ feature "User creates a post", %q{
 
   click_on "Submit"
 
-  expect(page).to have_content "you must provide a title with atleast 40 characters"
+  expect(page).to have_content "Title is too short (minimum is 40 characters)"
 
   end
 
@@ -95,6 +95,6 @@ feature "User creates a post", %q{
 
     click_on "Submit"
 
-    expect(page).to have_content "you must provide a description with atleast 150 characters"
+    expect(page).to have_content "Description is too short (minimum is 150 characters)"
   end
 end
