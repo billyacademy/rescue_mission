@@ -862,3 +862,234 @@ Processing by PostsController#index as HTML
   Rendered posts/index.html.erb within layouts/application (4.5ms)
 Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 2.8ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/posts/new" for 127.0.0.1 at 2014-12-15 19:03:13 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (84.1ms)
+Completed 200 OK in 139ms (Views: 119.6ms | ActiveRecord: 4.2ms)
+Started POST "/posts" for 127.0.0.1 at 2014-12-15 19:03:13 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"rspec help", "description"=>"This is a really complicated problem"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "posts" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-12-16 00:03:13.975808"], ["description", "This is a really complicated problem"], ["title", "rspec help"], ["updated_at", "2014-12-16 00:03:13.975808"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/23
+Completed 302 Found in 10ms (ActiveRecord: 2.3ms)
+Started GET "/posts/23" for 127.0.0.1 at 2014-12-15 19:03:13 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 23]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/posts/new" for 127.0.0.1 at 2014-12-15 19:03:13 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/posts" for 127.0.0.1 at 2014-12-15 19:03:14 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"rspec help", "description"=>"This is a really complicated problem"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-12-16 00:03:14.007088"], ["description", "This is a really complicated problem"], ["title", "rspec help"], ["updated_at", "2014-12-16 00:03:14.007088"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/24
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/posts/24" for 127.0.0.1 at 2014-12-15 19:03:14 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 24]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+Started GET "/posts/new" for 127.0.0.1 at 2014-12-15 19:03:14 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started POST "/posts" for 127.0.0.1 at 2014-12-15 19:03:14 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"What time is it?", "description"=>"It's dinner time!"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-12-16 00:03:14.022826"], ["description", "It's dinner time!"], ["title", "What time is it?"], ["updated_at", "2014-12-16 00:03:14.022826"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/25
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+Started GET "/posts/25" for 127.0.0.1 at 2014-12-15 19:03:14 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 25]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+Started GET "/posts/new" for 127.0.0.1 at 2014-12-15 19:03:14 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started POST "/posts" for 127.0.0.1 at 2014-12-15 19:03:14 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Can I have some help?", "description"=>"We are out to lunch"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-12-16 00:03:14.038611"], ["description", "We are out to lunch"], ["title", "Can I have some help?"], ["updated_at", "2014-12-16 00:03:14.038611"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/26
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/posts/26" for 127.0.0.1 at 2014-12-15 19:03:14 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 26]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 56ms (Views: 54.3ms | ActiveRecord: 0.4ms)
+Started GET "/posts" for 127.0.0.1 at 2014-12-15 19:03:14 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.3ms)[0m  [1mSELECT "posts".* FROM "posts"   ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started GET "/posts/new" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (89.6ms)
+Completed 200 OK in 154ms (Views: 130.9ms | ActiveRecord: 5.7ms)
+Started POST "/posts" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"rspec help", "description"=>"This is a really complicated problem"}, "commit"=>"Submit"}
+  [1m[36m (2.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (9.0ms)[0m  INSERT INTO "posts" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-12-16 00:19:41.433899"], ["description", "This is a really complicated problem"], ["title", "rspec help"], ["updated_at", "2014-12-16 00:19:41.433899"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/27
+Completed 302 Found in 24ms (ActiveRecord: 11.4ms)
+Started GET "/posts/27" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[35mPost Load (1.8ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 27]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 1.8ms)
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/posts/new" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/posts" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"rspec help", "description"=>"This is a really complicated problem"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-12-16 00:19:41.486708"], ["description", "This is a really complicated problem"], ["title", "rspec help"], ["updated_at", "2014-12-16 00:19:41.486708"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/28
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+Started GET "/posts/28" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 28]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+Started GET "/posts/new" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started POST "/posts" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"What time is it?", "description"=>"It's dinner time!"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-12-16 00:19:41.505645"], ["description", "It's dinner time!"], ["title", "What time is it?"], ["updated_at", "2014-12-16 00:19:41.505645"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/29
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+Started GET "/posts/29" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 29]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+Started GET "/posts/new" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/posts" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Can I have some help?", "description"=>"We are out to lunch"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "posts" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-12-16 00:19:41.584927"], ["description", "We are out to lunch"], ["title", "Can I have some help?"], ["updated_at", "2014-12-16 00:19:41.584927"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/30
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+Started GET "/posts/30" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 30]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.5ms)
+Started GET "/posts" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.4ms)[0m  [1mSELECT "posts".* FROM "posts"   ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 1.4ms)
+Started GET "/posts/28" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 28]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/posts/new" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/posts" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"rspec help", "description"=>"This is a really complicated problem"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-12-16 00:19:41.633837"], ["description", "This is a really complicated problem"], ["title", "rspec help"], ["updated_at", "2014-12-16 00:19:41.633837"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/31
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/posts/31" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 31]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+Started GET "/posts/new" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/posts" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"What time is it?", "description"=>"It's dinner time!"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-12-16 00:19:41.649284"], ["description", "It's dinner time!"], ["title", "What time is it?"], ["updated_at", "2014-12-16 00:19:41.649284"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/32
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/posts/32" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 32]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+Started GET "/posts/new" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started POST "/posts" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Can I have some help?", "description"=>"We are out to lunch"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-12-16 00:19:41.665554"], ["description", "We are out to lunch"], ["title", "Can I have some help?"], ["updated_at", "2014-12-16 00:19:41.665554"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/33
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/posts/33" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 33]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+Started GET "/posts" for 127.0.0.1 at 2014-12-15 19:19:41 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"   ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
