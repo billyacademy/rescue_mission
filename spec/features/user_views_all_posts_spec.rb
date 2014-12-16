@@ -13,30 +13,42 @@ So that I can help others
 
     visit '/posts/new'
 
-    fill_in "Title", with: "rspec help"
-    fill_in "Description", with: "This is a really complicated problem"
+    fill_in "Title", with: "rspec help tenletters tenletters tenletters tenletters"
+    fill_in "Description", with: "This is a really complicated problem words words words words words words words words words words
+    words words words words words words words words words words words words words words
+    words words words words words words words words words words words words
+    words words words words words words words words words words words words words words
+    words words words words words words words words words words words words "
 
     click_on "Submit"
 
     visit '/posts/new'
 
-    fill_in "Title", with: "What time is it?"
-    fill_in "Description", with: "It's dinner time!"
+    fill_in "Title", with: "What time is it? tenletters tenletters tenletters tenletters"
+    fill_in "Description", with: "It's dinner time! words words words words words words words words words words
+    words words words words words words words words words words words words words words
+    words words words words words words words words words words words words
+    words words words words words words words words words words words words words words
+    words words words words words words words words words words words words "
 
     click_on "Submit"
 
     visit '/posts/new'
 
-    fill_in "Title", with: "Can I have some help?"
-    fill_in "Description", with: "We are out to lunch"
+    fill_in "Title", with: "Can I have some help? tenletters tenletters tenletters"
+    fill_in "Description", with: "We are out to lunch  words words words words words words words words words words
+    words words words words words words words words words words words words words words
+    words words words words words words words words words words words words
+    words words words words words words words words words words words words words words
+    words words words words words words words words words words words words "
 
     click_on "Submit"
 
     visit '/posts'
 
-    expect(page).to have_content "rspec help"
-    expect(page).to have_content "Can I have some help?"
-    expect(page).to have_content "What time is it?"
+    expect(page).to have_content "rspec help tenletters tenletters tenletters tenletters"
+    expect(page).to have_content "What time is it? tenletters tenletters tenletters tenletters"
+    expect(page).to have_content "Can I have some help? tenletters tenletters tenletters"
 
   end
 end

@@ -13,35 +13,50 @@ feature "user views details of a post", %q{
 
   it "user views details of a post" do
 
-      visit '/posts/new'
+    visit '/posts/new'
 
-      fill_in "Title", with: "rspec help"
-      fill_in "Description", with: "This is a really complicated problem"
+    fill_in "Title", with: "rspec help tenletters tenletters tenletters tenletters"
+    fill_in "Description", with: "This is a really complicated problem words words words words words words words words words words
+    words words words words words words words words words words words words words words
+    words words words words words words words words words words words words
+    words words words words words words words words words words words words words words
+    words words words words words words words words words words words words "
 
-      click_on "Submit"
+    click_on "Submit"
 
-      visit '/posts/new'
+    visit '/posts/new'
 
-      fill_in "Title", with: "What time is it?"
-      fill_in "Description", with: "It's dinner time!"
+    fill_in "Title", with: "What time is it? tenletters tenletters tenletters tenletters"
+    fill_in "Description", with: "It's dinner time! words words words words words words words words words words
+    words words words words words words words words words words words words words words
+    words words words words words words words words words words words words
+    words words words words words words words words words words words words words words
+    words words words words words words words words words words words words "
 
-      click_on "Submit"
+    click_on "Submit"
 
-      visit '/posts/new'
+    visit '/posts/new'
 
-      fill_in "Title", with: "Can I have some help?"
-      fill_in "Description", with: "We are out to lunch"
+    fill_in "Title", with: "Can I have some help? tenletters tenletters tenletters"
+    fill_in "Description", with: "We are out to lunch  words words words words words words words words words words
+    words words words words words words words words words words words words words words
+    words words words words words words words words words words words words
+    words words words words words words words words words words words words words words
+    words words words words words words words words words words words words "
 
-      click_on "Submit"
+    click_on "Submit"
 
-      visit '/posts'
+    visit '/posts'
 
-      click_on "rspec help"
+      click_on "rspec help tenletters tenletters tenletters tenletters"
 
 
-
-     expect(page).to have_content "rspec help"
-     expect(page).to have_content "This is a really complicated problem"
+     expect(page).to have_content "rspec help tenletters tenletters tenletters tenletters"
+     expect(page).to have_content "This is a really complicated problem words words words words words words words words words words
+     words words words words words words words words words words words words words words
+     words words words words words words words words words words words words
+     words words words words words words words words words words words words words words
+     words words words words words words words words words words words words "
 
 
     end

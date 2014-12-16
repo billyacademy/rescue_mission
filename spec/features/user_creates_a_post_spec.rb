@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "User creats a post", %q{
+feature "User creates a post", %q{
   ```no-highlight
   As a user
   I want to post a question
@@ -17,15 +17,84 @@ feature "User creats a post", %q{
 
     visit '/posts/new'
 
-    fill_in "Title", with: "rspec help"
-    fill_in "Description", with: "This is a really complicated problem"
+    fill_in "Title", with: "This is a post with a title more than forty characters, I think............"
+    fill_in "Description", with: "This description has to be a minimum of 150 characters
+    words words words words words words words words words words words words words words words
+    words words words words words words words words words words words words words words words
+    words words words words words words words words words words words words words words words words
+    words words words words words words words words words words words words words words words words "
 
     click_on "Submit"
 
 
     expect(page).to have_content "You have successfully submitted a post"
-    expect(page).to have_content "rspec help"
-    expect(page).to have_content "This is a really complicated problem"
+    expect(page).to have_content "This is a post with a title more than forty characters, I think............"
+    expect(page).to have_content "This description has to be a minimum of 150 characters
+    words words words words words words words words words words words words words words words
+    words words words words words words words words words words words words words words words
+    words words words words words words words words words words words words words words words words
+    words words words words words words words words words words words words words words words words "
   end
 
+  it "creates a post with invalid title" do
+    visit '/posts/new'
+
+    fill_in "Description", with: "This is a really complicated problem"
+
+    click_on "Submit"
+
+    expect(page).to have_content "you must provide a title with atleast 40 characters"
+
+  end
+
+  it "create a post with invalid description" do
+
+    visit '/posts/new'
+
+    fill_in "Title", with: "This is a really complicated problem helloooooooooooooooooooo"
+
+    click_on "Submit"
+
+    expect(page).to have_content "you must provide a description with atleast 150 characters"
+
+  end
+
+  it "creates a post with no title or description" do
+    visit '/posts/new'
+
+    click_on "Submit"
+
+    expect(page).to have_content "you must provide a title and description"
+
+
+  end
+
+  it "creates a title with less than 40 characters" do
+
+  visit '/posts/new'
+
+  fill_in "Title", with: "rspec help"
+  fill_in "Description", with: "This description has to be a minimum of 150 characters
+  words words words words words words words words words words words words words words words
+  words words words words words words words words words words words words words words words
+  words words words words words words words words words words words words words words words words
+  words words words words words words words words words words words words words words words words"
+
+  click_on "Submit"
+
+  expect(page).to have_content "you must provide a title with atleast 40 characters"
+
+  end
+
+  it "creates a description with less than 150 characters" do
+
+    visit '/posts/new'
+
+    fill_in "Title", with: "This is a really complicated problem helloooooooooooooooooooo"
+    fill_in "Description", with: "short description"
+
+    click_on "Submit"
+
+    expect(page).to have_content "you must provide a description with atleast 150 characters"
+  end
 end
