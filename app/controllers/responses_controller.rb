@@ -7,30 +7,28 @@ class ResponsesController < ApplicationController
     @post = Post.find(params[:post_id])
     @response = Response.new(response_params)
     @response.post_id = params[:post_id]
+    @responses = Response.where(post_id: @post[:id])
 
-    #@response.post_id = @post
-    @response.save!
-    redirect_to @post
+    if @response.save
+      redirect_to @post, notice: "You have successfully submitted a response."
+    else
+      render 'posts/show', notice: "Please resubmit with a longer message."
 
-    # if @response.save
-    #   redirect_to
-
-  #   if @post.save
-  #     redirect_to post_path(@post), notice: "You have successfully submitted a post."
-  #   elsif @post.title.empty? && @post.description.empty?
-  #     flash[:notice] = "Title can't be blank Title is too short (minimum is 40 characters)"
-  #     render new_post_path(@post)
-  #   elsif @post.title.length <= 40
-  #     flash[:notice] = "Title is too short (minimum is 40 characters)"
-  #     render new_post_path(@post)
-  #   elsif @post.description.length <= 150
-  #     flash[:notice] = "Description is too short (minimum is 150 characters) with atleast 150 characters"
-  #     render new_post_path(@post)
-  #   end
-  # end
-
-
+    end
   end
+
+  def show
+      @post = Post.find(params[:post_id])
+      @responses = Response.where(post_id: @post[:id])
+  end
+
+  def destroy
+    @post = Post.find(params[:post_id])
+    @response = @post.responses.find(params[:id])
+    @response.destroy
+    redirect_to post_path(@post)
+  end
+
   private
 
   def response_params

@@ -2,23 +2,10 @@
 <div id="error_explanation">
     <ul>
       <% @post.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <li><%= msg %>
+      </li>
       <% end %>
     </ul>
   </div>
   <% end %>
-<%= form_for @post do |f| %>
-<div>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-</div>
-
-<div>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-</div>
-
-<div>
-  <%= f.submit "Submit" %>
-</div>
-<% end %>
+<%= render 'new_post_form' %>

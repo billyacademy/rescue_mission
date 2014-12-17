@@ -27,9 +27,30 @@ it "creates a response with valid attributes" do
 
   fill_in "Message", with: "That's a really good point Chan, you killin it right now but I have one recommendation
     going forward, gimme my money."
+
+    click_on "Submit"
+
+    expect(page).to have_content "You have successfully submitted a response."
   end
 
+  it "creates a response with invalid attributes" do
 
+    visit '/posts/new'
 
+    fill_in "Title", with: "This is a post with a title more than forty characters, I think..........."
+    fill_in "Description", with: "Description is too short (minimum is 150 characters)
+    words words words words words words words words words words words words words words words
+    words words words words words words words words words words words words words words words
+    words words words words words words words words words words words words words words words words
+    words words words words words words words words words words words words words words words words "
+
+    click_on "Submit"
+
+    fill_in "Message", with: "That's a really good point Chany."
+
+    click_on "Submit"
+
+    expect(page).to have_content "Message is too short (minimum is 50 characters)"
+  end
 
 end

@@ -1,22 +1,27 @@
 <h3> <%= @post.title %> </h3>
 
+<% if @response.errors.any? %>
+<div id="error_explanation">
+  <ul>
+    <% @response.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
 <div>
   Details: <%=@post.description %>
 </div>
 
 <div>
-<%= form_for [@post, @response] do |f| %>
-
-<%= f.label :message %>
-<%= f.text_area :message %>
-
-<%= f.submit %>
-
-<% end %>
+  <%= render "response_form" %>
 </div>
-
-
-
 <% @responses.each do |response| %>
-  <li><%= response.message %></li>
+  <li>
+    <%= response.message %>
+    <%= link_to "Destroy Comment", [response.post, response],
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+  </li>
   <% end %>

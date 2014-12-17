@@ -24,31 +24,9 @@ feature "user views details of a post", %q{
 
     click_on "Submit"
 
-    visit '/posts/new'
-
-    fill_in "Title", with: "What time is it? tenletters tenletters tenletters tenletters"
-    fill_in "Description", with: "It's dinner time! words words words words words words words words words words
-    words words words words words words words words words words words words words words
-    words words words words words words words words words words words words
-    words words words words words words words words words words words words words words
-    words words words words words words words words words words words words "
-
-    click_on "Submit"
-
-    visit '/posts/new'
-
-    fill_in "Title", with: "Can I have some help? tenletters tenletters tenletters"
-    fill_in "Description", with: "We are out to lunch  words words words words words words words words words words
-    words words words words words words words words words words words words words words
-    words words words words words words words words words words words words
-    words words words words words words words words words words words words words words
-    words words words words words words words words words words words words "
-
-    click_on "Submit"
-
     visit '/posts'
 
-      click_on "rspec help tenletters tenletters tenletters tenletters"
+      click_on "View"
 
 
      expect(page).to have_content "rspec help tenletters tenletters tenletters tenletters"
