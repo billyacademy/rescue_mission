@@ -17,12 +17,13 @@ class PostsController < ApplicationController
       render new_post_path(@post)
     end
 
+  end
+
   def destroy
-      @article = Post.find(params[:id])
-      @article.destroy
+      @post = Post.find(params[:id])
+      @post.destroy
 
       redirect_to posts_path
-    end
   end
 
   def edit
