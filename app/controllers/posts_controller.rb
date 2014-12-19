@@ -13,7 +13,6 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post), notice: "You have successfully submitted a post."
     else
-
       render new_post_path(@post)
     end
 
@@ -21,20 +20,24 @@ class PostsController < ApplicationController
 
   def destroy
       @post = Post.find(params[:id])
-      @post.destroy
-
-      redirect_to posts_path
+      if @post.destroy
+        redirect_to posts_path, notice: "You have successfully deleted a post."
+      end
   end
 
   def edit
     @post = Post.find(params[:id])
+
+      # if @post.save
+      #   redirect_to posts_path, notice: "You have successfully edited a post."
+      # end
   end
 
   def update
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to @post, notice: "You have successfully edited a post."
     else
       render 'edit'
     end
@@ -47,7 +50,7 @@ class PostsController < ApplicationController
     #@response = Response.where(params[:post_id])
     @response = Response.new
 
-    @responses = Response.where(post_id: @post[:id])
+    @responses = Response.where(post_id: @post[:id]).order('created_at DESC')
   end
 
 

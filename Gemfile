@@ -42,4 +42,5 @@ group :development, :test do
   gem 'capybara'
   gem 'pry-rails'
   gem 'launchy'
+  gem 'foundation-rails'
 end

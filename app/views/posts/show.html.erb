@@ -1,9 +1,13 @@
-<h3> <%= @post.title %> </h3>
 
-<% if @response.errors.any? %>
+<h3> <%= @post.title %> |
+<%= link_to 'Edit', edit_post_path(params[:id]) %>
+</h3>
+
+
+<% if @post.errors.any? %>
 <div id="error_explanation">
   <ul>
-    <% @response.errors.full_messages.each do |msg| %>
+    <% @post.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
     <% end %>
   </ul>
@@ -15,6 +19,7 @@
 </div>
 
 <div>
+
   <%= render "response_form" %>
 </div>
 <% @responses.each do |response| %>

@@ -50,7 +50,7 @@ feature "user edits a post", %q{
       birds birds birds birds birds birds birds birds birds birds birds birds birds birds birds birds
       birds birds birds birds birds birds birds birds birds birds birds birds birds birds birds birds ")
 
-      save_and_open_page
+      expect(page).to have_content("You have successfully edited a post.")
     end
 
   end

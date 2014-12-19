@@ -12,21 +12,21 @@ So that I can help them solve their problem"} do
 #- I must be presented with errors if I fill out the form incorrectly }
 
 
-it "creates a response with valid attributes" do
+  it "creates a response with valid attributes" do
 
-  visit '/posts/new'
+    visit '/posts/new'
 
-  fill_in "Title", with: "This is a post with a title more than forty characters, I think............"
-  fill_in "Description", with: "Description is too short (minimum is 150 characters)
-  words words words words words words words words words words words words words words words
-  words words words words words words words words words words words words words words words
-  words words words words words words words words words words words words words words words words
-  words words words words words words words words words words words words words words words words "
+    fill_in "Title", with: "This is a post with a title more than forty characters, I think............"
+    fill_in "Description", with: "Description is too short (minimum is 150 characters)
+    words words words words words words words words words words words words words words words
+    words words words words words words words words words words words words words words words
+    words words words words words words words words words words words words words words words words
+    words words words words words words words words words words words words words words words words "
 
-  click_on "Submit"
+    click_on "Submit"
 
-  fill_in "Message", with: "That's a really good point Chan, you killin it right now but I have one recommendation
-    going forward, gimme my money."
+    fill_in "Message", with: "That's a really good point Chan, you killin it right now but I have one recommendation
+      going forward, gimme my money."
 
     click_on "Submit"
 

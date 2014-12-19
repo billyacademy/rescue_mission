@@ -12,8 +12,7 @@ class ResponsesController < ApplicationController
     if @response.save
       redirect_to @post, notice: "You have successfully submitted a response."
     else
-      render 'posts/show', notice: "Please resubmit with a longer message."
-
+      redirect_to post_path(@post), notice: "Message is too short (minimum is 50 characters)"
     end
   end
 
@@ -36,3 +35,6 @@ class ResponsesController < ApplicationController
   end
 
 end
+
+
+#@all_posts = Post.all.order('created_at DESC')

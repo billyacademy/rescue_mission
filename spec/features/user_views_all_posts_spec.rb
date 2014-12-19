@@ -49,6 +49,8 @@ So that I can help others
     expect(page).to have_content "rspec help tenletters tenletters tenletters tenletters"
     expect(page).to have_content "What time is it? tenletters tenletters tenletters tenletters"
     expect(page).to have_content "Can I have some help? tenletters tenletters tenletters"
-
+    page.text.index("What time is it? tenletters tenletters tenletters tenletters") > page.text.index("Can I have some help? tenletters tenletters tenletters" )
   end
+
+
 end
