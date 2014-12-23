@@ -1,5 +1,4 @@
 class ResponsesController < ApplicationController
-
   def new
   end
 
@@ -10,15 +9,16 @@ class ResponsesController < ApplicationController
     @responses = Response.where(post_id: @post[:id])
 
     if @response.save
-      redirect_to @post, notice: "You have successfully submitted a response."
+      redirect_to @post, notice: 'You have successfully submitted a response.'
     else
-      redirect_to post_path(@post), notice: "Message is too short (minimum is 50 characters)"
+      redirect_to post_path(@post), notice:
+      'Message is too short (minimum is 50 characters)'
     end
   end
 
   def show
-      @post = Post.find(params[:post_id])
-      @responses = Response.where(post_id: @post[:id])
+    @post = Post.find(params[:post_id])
+    @responses = Response.where(post_id: @post[:id])
   end
 
   def destroy
@@ -33,8 +33,4 @@ class ResponsesController < ApplicationController
   def response_params
     params.require(:response).permit(:message)
   end
-
 end
-
-
-#@all_posts = Post.all.order('created_at DESC')
